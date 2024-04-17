@@ -1,5 +1,5 @@
 # ABB EGM (Externally Guided Motion)
-The respository contains a simple C++ program and corresponding RAPID program for testing EGM communication between a PC and ABB industrial robot.
+The respository contains setup instructions and a simple C++ and RAPID program for testing EGM communication between a PC and ABB industrial robot.
 - [`egm_hello_world`](https://github.com/madelinegannon/abb_egm/tree/main/egm_hello_world): simple C++ program that connects and reads information off an ABB robot.
 - [`egm_template`](https://github.com/madelinegannon/abb_egm/tree/main/egm_template): RAPID program that connects and runs `EGMJoint` moves.
 
@@ -53,7 +53,7 @@ Install Microsoft's package manager `vcpkg`:
 
 ### Step 4: Generate EGM Protobuf Files
 
-![Reference Manual](https://github.com/madelinegannon/abb_egm/blob/main/assets/egm_proto_file_location.png)
+![Reference Manual](https://github.com/madelinegannon/abb_egm_hello_world/blob/main/assets/egm_proto_file_location.png)
 
 The correct `egm.proto` for your RobotWare OS file can be found through ABB RobotStudio.
 1. Download & Install [RobotStudio](https://new.abb.com/products/robotics/robotstudio/downloads).
@@ -62,7 +62,7 @@ The correct `egm.proto` for your RobotWare OS file can be found through ABB Robo
     - Right-click on the installed RobotWare version in the Add-Ins browser.
     - Select Open Package Folder.
     - Navigate to *RobotPackages\RobotControl_<RW_Version>\utility\Template\EGM\egm.proto*
-![](https://github.com/madelinegannon/abb_egm/blob/main/assets/egm_proto_file_location.gif)   
+![](https://github.com/madelinegannon/abb_egm_hello_world/blob/main/assets/egm_proto_file_location.gif)   
 4. Copy `egm.proto` to an easier location for protobuf:
     - Right-click File Explore and select **Open in Terminal**.
      ```bash
