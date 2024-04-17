@@ -75,3 +75,10 @@ The correct `egm.proto` for your RobotWare OS file can be found through ABB Robo
       ```
 6. This creates a `.pb.h` and `.pb.cc` files in that same location that you can copy & paste into your application folder.
 
+## EGM Setup   
+The included RAPID program is configured to work with the default EGM settings on a virtual controller. You will need to update these settings if you want to fine-tune your EGM parameters or work on a real robot.
+![](https://github.com/madelinegannon/abb_egm_hello_world/blob/main/assets/egm_config_settings.gif)
+
+| Motion | Communication| 
+| :---------: | :------: |
+| ![](https://github.com/madelinegannon/abb_egm_hello_world/blob/main/assets/egm_config_settings_motion.gif) | ![](https://github.com/madelinegannon/abb_egm_hello_world/blob/main/assets/egm_config_settings_communication.gif) |
