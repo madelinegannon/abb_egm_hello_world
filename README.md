@@ -83,3 +83,7 @@ The included RAPID program is configured to work with the default EGM settings o
 | Motion | Communication| 
 | :---------: | :------: |
 | ![](https://github.com/madelinegannon/abb_egm_hello_world/blob/main/assets/egm_config_settings_motion.png) | ![](https://github.com/madelinegannon/abb_egm_hello_world/blob/main/assets/egm_config_settings_communication.png) |
+
+
+## Useful Links
+- [Externally Guided Motion RW7 Application Manual](https://github.com/madelinegannon/abb_egm_hello_world/blob/main/assets/3HAC073318%20AM%20Externally%20Guided%20Motion%20RW7-en.pdf)
