@@ -79,6 +79,7 @@ The correct `egm.proto` for your RobotWare OS file can be found through ABB Robo
 The included RAPID program is configured to work with the default EGM settings on a virtual controller. You will need to update these settings if you want to fine-tune your EGM parameters or work on a real robot.
 ![](https://github.com/madelinegannon/abb_egm_hello_world/blob/main/assets/egm_config_settings.gif)
 
+### Example Settings
 | Motion | Communication| 
 | :---------: | :------: |
-| ![](https://github.com/madelinegannon/abb_egm_hello_world/blob/main/assets/egm_config_settings_motion.gif) | ![](https://github.com/madelinegannon/abb_egm_hello_world/blob/main/assets/egm_config_settings_communication.gif) |
+| ![](https://github.com/madelinegannon/abb_egm_hello_world/blob/main/assets/egm_config_settings_motion.png) | ![](https://github.com/madelinegannon/abb_egm_hello_world/blob/main/assets/egm_config_settings_communication.png) |
