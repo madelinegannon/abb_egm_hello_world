@@ -1,0 +1,48 @@
+MODULE EGM
+    
+    !***********************************************************
+    !
+    ! EGM Template Module
+    !
+    ! Copyright (c) 2024, ATONATON, LLC. All rights reserved. 
+    !
+    ! Madeline Gannon | www.atonaton.com
+    ! 02.26.2022
+    !
+    ! Last Revision: 04.17.2024
+    !
+    !***********************************************************
+
+    VAR egmident egmID1;
+    VAR egmstate egmSt1;
+    CONST egm_minmax egm_minmax1:=[-0.001,0.001]; !Joint convergence: +/-0.1 degrees
+
+    PROC run_egm()
+        EGMReset egmID1;
+        EGMGetId egmID1;
+        egmSt1:=EGMGetState(egmID1);
+        TPWrite "EGM state: "\Num:=egmSt1;
+        IF egmSt1 <= EGM_STATE_CONNECTED THEN
+            IF RobOS() THEN
+                ! Execution statements in RC
+                EGMSetupUC ROB_1, egmID1, "default", "EGM_11:" \Joint\ CommTimeout:=100;
+            ELSE
+                ! Execution statements in VC
+                TPWrite "CONNECTING TO VIRTUAL CONTROLLER";
+                EGMSetupUC ROB_1, egmID1, "default", "EGM_11_local:" \Joint\ CommTimeout:=100;
+            ENDIF
+            egmSt1:=EGMGetState(egmID1);
+            IF egmSt1 = EGM_STATE_CONNECTED THEN
+                TPWrite "ROB_1 CONNECTED!";
+            ENDIF
+        ENDIF 
+        EGMActJoint egmID1, \J1:=egm_minmax1 \J2:=egm_minmax1 \J3:=egm_minmax1 \J4:=egm_minmax1 \J5:=egm_minmax1 \J6:=egm_minmax1 \J7:=egm_minmax1 \LpFilter:=3 \SampleRate:=24 \MaxSpeedDeviation:=100;
+        EGMRunJoint egmID1, EGM_STOP_HOLD \J1 \J2 \J3 \J4 \J5 \J6 \J7 \CondTime:=20 \RampInTime:=2.0;
+        
+        egmSt1:=EGMGetState(egmID1);
+        IF egmSt1=EGM_STATE_CONNECTED THEN
+            TPWrite "Convergence condition fulfilled.. Resetting EGM.";
+            EGMReset egmID1;
+        ENDIF
+    ENDPROC
+ENDMODULE

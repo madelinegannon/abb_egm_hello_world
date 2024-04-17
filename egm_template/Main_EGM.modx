@@ -1,0 +1,26 @@
+MODULE Main_EGM
+    !***********************************************************
+    !
+    ! EGM Template Module
+    !
+    ! Copyright (c) 2024, ATONATON, LLC. All rights reserved. 
+    !
+    ! Madeline Gannon | www.atonaton.com
+    ! 02.26.2022
+    !
+    ! Last Revision: 04.17.2024
+    !
+    !***********************************************************
+    
+    ! Start Position
+    VAR jointtarget startPosition:=[[0,0,0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    
+    PROC Main()
+        MoveAbsJ startPosition,v100,fine,tool0;
+        WHILE TRUE DO
+            run_egm;
+        ENDWHILE           
+    ENDPROC
+
+ENDMODULE
+
