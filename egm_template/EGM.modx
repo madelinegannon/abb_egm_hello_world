@@ -29,7 +29,7 @@ MODULE EGM
             ELSE
                 ! Execution statements in VC
                 TPWrite "CONNECTING TO VIRTUAL CONTROLLER";
-                EGMSetupUC ROB_1, egmID1, "default", "UCdevice:" \Joint\ CommTimeout:=100;
+                EGMSetupUC ROB_1, egmID1, "default", "UCdevice" \Joint\ CommTimeout:=100;
             ENDIF
             egmSt1:=EGMGetState(egmID1);
             IF egmSt1 = EGM_STATE_CONNECTED THEN
