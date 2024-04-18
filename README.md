@@ -1,7 +1,8 @@
 # ABB EGM (Externally Guided Motion)
 The respository contains setup instructions and a simple C++ and RAPID program for testing EGM communication between a PC and ABB industrial robot.
-- [`egm_hello_world`](https://github.com/madelinegannon/abb_egm/tree/main/egm_hello_world): simple C++ program that connects and reads information off an ABB robot.
+- [`egm_hello_world`](https://github.com/madelinegannon/abb_egm/tree/main/egm_hello_world): simple console program that connects and reads information off an ABB robot.
 - [`egm_template`](https://github.com/madelinegannon/abb_egm/tree/main/egm_template): RAPID program that connects and runs `EGMJoint` moves.
+- [`egm_server`](https://github.com/madelinegannon/abb_egm/tree/main/egm_server): console program for multi-robot EGM.
 
 ### Tested On
 - Windows 10/11
